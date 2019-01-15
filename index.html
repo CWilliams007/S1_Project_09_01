@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+      New Perspectives on HTML5 and CSS3, 7th Edition
+      Tutorial 7
+      Case Problem 1
+
+      CGIP Registration Form
+      Author: Chad Williams
+      Date:   1.15.19
+
+      Filename:   cg_register.html
+
+   -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CGIP Registration Form</title>
+    <link href="cg_base.css" rel="stylesheet" />
+    <link href="cg_styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="cg_validate.css">
+    <link rel="stylesheet" href="cg_forms.css">
+    <script src="cg_script.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="cg_logo.png" alt="Computer Graphics and Image Processing" id="logoimg" />
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">home page</a></li>
+            <li><a href="#">keynote address</a></li>
+            <li><a href="#">speakers</a></li>
+            <li class="newgroup"><a href="#">general session</a></li>
+            <li><a href="#">abstracts</a></li>
+            <li><a href="#">programs</a></li>
+            <li><a href="#">workshops</a></li>
+            <li class="newgroup"><a href="#">committees</a></li>
+            <li><a href="#">executive session</a></li>
+            <li><a href="#">advisory council</a></li>
+            <li class="newgroup"><a href="#">travel info</a></li>
+            <li><a href="#">accommodations</a></li>
+            <li><a href="#">banquet</a></li>
+            <li><a href="#">family attractions</a></li>
+            <li class="newgroup"><a href="#">registration</a></li>
+            <li class="newgroup"><a href="#">ACGIP home page</a></li>
+            <li><a href="#">tour Sante Fe</a></li>
+            <li><a href="#">links</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h1>Conference Registration Form</h1>
+        <p>Required Item (*)</p>
+
+        <!-- uses post method to send information -->
+        <form action="http://www.example.com/cg/register" method="POST">
+            <!-- collects titles of attendee, such as Dr, Mr, Ms -->
+            <label for="titleBox">Title</label>
+            <input list="titleList" name="title" id="titleBox" type="text">
+            <!-- datalist is linked to the input, offering clients suggestions for inputs of data. -->
+            <datalist id="titleList">
+                <option value="Mr.">
+                <option value="Ms."></option>
+                <option value="Mrs."></option>
+                <option value="Prof."></option>
+                <option value="Dr."></option>
+                <option value="Assist. Prof."></option>
+                <option value="Assoc. Prof."></option>
+            </datalist>
+            <!-- Collects first names, uses fnBox as id; required-->
+            <label for="fnBox">First Name*</label>
+            <input name="firstName" id="fnBox" type="text" placeholder="First Name" required>
+            <!-- Collects last names, uses lnBox as id; required -->
+            <label for="lnBox">Last Name*</label>
+            <input name="lastName" id="lnBox" type="text" placeholder="Last Name" required>
+            <!-- Textarea address for attendees; required -->
+            <label for="addBox">Address*</label>
+            <textarea name="address" id="addBox" cols="30" rows="10" required></textarea>
+            <!-- Input for attendee's school -->
+            <label for="groupBox">Company or University</label>
+            <input name="group" id="groupBox" type="text">
+            <!-- Input for attendee emails, required, uses type email. -->
+            <label for="mailBox">Email*</label>
+            <input name="email" id="mailBox" type="email" required>
+            <!-- phone number input and lable, uses placeholder and pattern character code to ensure correct data is entered 
+            in format provided -->
+            <label for="phoneBox">Phone Number*</label>
+            <input name="phoneNumber" id="phoneBox" type="tel" placeholder="(###) nnn-nnnn" pattern="^\d{10}$|^(\(d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
+                required>
+            <!-- membership number collection using text right now as a type -->
+            <label for="idBox">ACGIP Membership Number</label>
+            <input name="acgipID" id="idBox" type="text" placeholder="acgip-nnnnnn" pattern="^acgip\-\d{6}$ ">
+            <!-- registration category selection -->
+            <label for="category">Registration Category</label>
+            <select name="registerType" id="regList">
+                <option value="member">ACGIP Member ($695)</option>
+                <option value="nonmember">Non Member ($795)</option>
+                <option value="student">Student ($310)</option>
+                <option value="poster">Poster ($95)</option>
+                <option value="guest">Guest($35)</option>
+            </select>
+
+            <!-- buttons for submitting form and clearing it -->
+            <p>
+                <input type="submit" value="Continue">
+            </p>
+        </form>
+    </section>
+
+    <aside>
+        <dl>
+            <dt>ACGIP Member ($695)</dt>
+            <dd>Eligible to attend all sessions and banquet</dd>
+            <dt>Non-Member ($795)</dt>
+            <dd>Eligible to attend all sessions and banquet</dd>
+            <dt>Student ($310)</dt>
+            <dd>Eligible to attend all sessions. <a href="#">Proof</a> of
+                student status required</dd>
+            <dt>Poster ($95)</dt>
+            <dd>Eligible to attend display hall and vendor stations</dd>
+            <dt>Guest ($35)</dt>
+            <dd>Eligible to attend banquet only</dd>
+        </dl>
+    </aside>
+
+    <footer>
+        Association of Computer Graphics and Image Processing
+    </footer>
+</body>
+
+</html>

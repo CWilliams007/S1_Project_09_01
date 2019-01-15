@@ -1,0 +1,44 @@
+/*
+   New Perspectives on HTML and CSS, 7th Edition
+   Tutorial 7
+   Case Problem 1
+
+   ACGIP Registration Validation Style Sheet
+      Author: Chad Williams
+      Date:   1.15.19
+
+   Filename: cg_validate.css
+
+*/
+/* sets height of address box, seemed to big, will stretch depending on amount os space someone needs */
+textarea#addBox {
+    height: 30px;
+}
+
+/* Validation Styles */
+/* adds background color to currently selected input "focus" */
+input:focus,
+select:focus,
+textarea:focus {
+    background-color: rgb(245, 245, 140);
+}
+
+/* all valid ids will display a checkmark and change background color to green when focused on and correct data entered */
+#fnBox:focus:valid,
+#lnBox:focus:valid,
+#addBox:focus:valid,
+#mailBox:focus:valid,
+#phoneBox:focus:valid,
+#idBox:focus:invalid {
+    background: rgb(220, 245, 140) url("cg_valid.png") right/contain no-repeat;
+}
+
+/* all invalid ids will display a wrong image and change background color to red when focused on and incorrect data entered */
+#fnBox:focus:invalid,
+#lnBox:focus:invalid,
+#addBox:focus:invalid,
+#mailBox:focus:invalid,
+#phoneBox:focus:invalid,
+#idBox:focus:invalid {
+    background: rgb(255, 232, 232) url("cg_invalid.png") right/contain no-repeat;
+}
